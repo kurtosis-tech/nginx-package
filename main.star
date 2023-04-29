@@ -1,13 +1,20 @@
-# NOTE: If you're a VSCode user, you might like our VSCode extension: https://marketplace.visualstudio.com/items?itemName=Kurtosis.kurtosis-extension
-
 NAME_ARG = "name"
+IMAGE_ARG = "image"
 
-# For more information on...
-#  - the 'run' function:  https://docs.kurtosis.com/concepts-reference/packages#runnable-packages
-#  - the 'plan' object:   https://docs.kurtosis.com/starlark-reference/plan
-#  - the 'args' object:   https://docs.kurtosis.com/next/concepts-reference/args
+HTTP_PORT_NAME = "http"
+
 def run(plan, args):
-    name = args.get(NAME_ARG, "John Snow")
-    plan.print("Hello, " + name)
+    name = args.get(NAME_ARG, "nginx")
+    image = args.get(IMAGE_ARG, "nginx:latest")
+
+    plan.add_service(
+        name = name,
+        config = ServiceConfig(
+            image = image,
+            ports = {
+                HTTP_PORT_NAME: PortSpec(number = 80, application_protocol = "http")
+            }
+        )
+    )
 
     # Try out a plan.add_service here (https://docs.kurtosis.com/starlark-reference/plan#add_service)
