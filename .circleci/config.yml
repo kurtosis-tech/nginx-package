@@ -19,8 +19,9 @@ jobs:
       - checkout
 
       - run: |
-          # TODO parameterize this as necessary
           kurtosis run .
+
+          # TODO add a test for the config file mount?
   
 workflows:
   build:
