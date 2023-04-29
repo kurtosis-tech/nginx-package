@@ -29,7 +29,13 @@ NOTE: the `//` lines are not valid JSON; you will need to remove them!
     "name": "nginx",
 
     // The image that will be started
-    "image": "nginx:latest"
+    "image": "nginx:latest",
+
+    // The name of a files artifact (https://docs.kurtosis.com/concepts-reference/files-artifacts) containing one
+    // or more Nginx .conf files (https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/), for
+    // example nginx.conf
+    // If not supplied, no custom configuration will be loaded
+    "config_files_artifact": ""
 }
 ```
 
