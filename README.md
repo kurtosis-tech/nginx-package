@@ -14,6 +14,9 @@ If you don't have Kurtosis installed, [click here to run this package on the Kur
 
 To blow away the created [enclave][enclaves-reference], run `kurtosis clean -a`.
 
+#### Result
+Running this package will return a [`Service`](https://docs.kurtosis.com/starlark-reference/service) object representing the NginX service that was added. The service has one port available, with port name `http`.
+
 #### Configuration
 
 <details>

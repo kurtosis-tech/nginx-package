@@ -15,7 +15,7 @@ def run(plan, args):
             "/etc/nginx/conf.d": config_file_artifact,
         }
 
-    plan.add_service(
+    nginx_service = plan.add_service(
         name = name,
         config = ServiceConfig(
             image = image,
@@ -25,3 +25,5 @@ def run(plan, args):
             files = files,
         )
     )
+
+    return nginx_service
