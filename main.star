@@ -4,7 +4,7 @@ CONFIG_FILES_ARTIFACT_ARG = "config_files_artifact"
 
 HTTP_PORT_NAME = "http"
 
-def run(plan, args):
+def run(plan, args = {}):
     name = args.get(NAME_ARG, "nginx")
     image = args.get(IMAGE_ARG, "nginx:latest")
     config_file_artifact = args.get(CONFIG_FILES_ARTIFACT_ARG, "")
