@@ -1,2 +1,3 @@
-# TODO replace this with your Github username and this repo's name!
 name: "github.com/kurtosis-tech/nginx-package"
+description: |
+  This is a Kurtosis NGINX package for starting the http server service.
